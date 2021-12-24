@@ -1,0 +1,53 @@
+<header class="header-section">
+
+
+    <div class="nav-item">
+        <div class="container">
+            <div class="nav-depart">
+                <div class="depart-btn">
+                    <i class="ti-menu"></i>
+                    <span>All departments</span>
+                    <ul class="depart-hover">
+                        <li ><a href="home">Home</a></li>
+                        <li ><a href="listachat">Acheter</a></li>
+                        <li><a href="list">Louer</a></li>
+                        <li><a href="#">Diposer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="nav-menu mobile-menu">
+                <ul>
+                    <li ><a href="home">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li class="active"><a href="#">Collection</a>
+                        <ul class="dropdown">
+                            <li><a href="#">LOUER</a></li>
+                            <li><a href="#">ACHETER</a></li>
+                            <li><a href="#">DIPOSER</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about">About Us</a></li>
+                  
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </div>
+
+    
+  </header>
+
+  <div class="col-lg-6 px-lg-4" >
+    <div class="card">
+     
+        <div class="pi-pic">
+            <img src={{p.filename}} alt="" />
+        </div>
+
+   
+    </div>
+  </div>
+
+  <h5>adresse : {{p.adresse}}</h5>
+  <h5>prix : {{p.prix}}</h5>
+  <h5>description : {{p.contenu}}</h5>

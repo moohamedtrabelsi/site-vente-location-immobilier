@@ -1,0 +1,88 @@
+<header class="header-section">
+
+
+    <div class="nav-item">
+        <div class="container">
+            <div class="nav-depart">
+                <div class="depart-btn">
+                    <i class="ti-menu"></i>
+                    <span>All departments</span>
+                    <ul class="depart-hover">
+                        <li ><a href="home">Home</a></li>
+                        <li ><a href="listachat">Acheter</a></li>
+                        <li><a href="list">Louer</a></li>
+                        <li><a href="#">Diposer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="nav-menu mobile-menu">
+                <ul>
+                    <li ><a href="home">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li class="active"><a href="#">Collection</a>
+                        <ul class="dropdown">
+                            <li><a href="#">LOUER</a></li>
+                            <li><a href="#">ACHETER</a></li>
+                            <li><a href="#">DIPOSER</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about">About Us</a></li>
+                   
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </div>
+
+    
+  </header>
+
+  <div class="col-lg-6 px-lg-4" >
+    <div class="card">
+     
+      <div class="card-body p-lg-5">
+        <p class="text-muted text-sm mb-5">Merci de remplir tes données.</p>
+        <form [formGroup]= "diposerForm" id="loginForm" action="index.html">
+          <div class="form-floating mb-3">
+            <input class="form-control" id="floatingInput" formControlName="type" type="email" placeholder="achat" required>
+            <label for="floatingInput">Type (achat ou location)</label>
+            <div class="alert alert-danger" *ngIf="test"> seul achat ou location seront acceptées </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="floatingInput" formControlName="adresse" type="email" placeholder="10 rue madrid Tunis" required>
+            <label for="floatingInput">adresse</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="floatingInput" formControlName="contenu" type="email" placeholder="Description" required>
+            <label for="floatingInput">Description</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="floatingInput" formControlName="prix" type="text" placeholder="100" required>
+            <label for="floatingInput">prix</label>
+          </div>
+
+          <label class="image-upload-container btn btn-link">
+            <span>Select Image<i class="fa fa-upload" style="padding-left: 5px;"></i></span>
+            <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)">
+          </label>
+          <div *ngIf="selectedFile" class="img-preview-container">
+
+            <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
+              [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+            </div>
+
+            <div *ngIf="selectedFile.pending" class="img-loading-overlay">
+              <div class="img-spinning-circle"></div>
+            </div>
+
+            <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!
+            </div>
+            <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+          </div>
+
+          <button class="btn btn-primary" (click)="diposer()" type="button">Diposer</button>
+        </form>
+      </div>
+   
+    </div>
+  </div>
